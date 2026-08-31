@@ -16,6 +16,7 @@ ignored_content = ["*.example"]
 
 [markdown.highlighting]
 theme = "github-dark-default"
+extra_grammars = [ "grammars/valkey.json" ]
 
 # Needed to stop certain command topics from being destroyed by the slugifier
 [slugify]

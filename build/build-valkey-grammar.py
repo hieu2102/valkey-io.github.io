@@ -74,7 +74,7 @@ grammar = {
         },
         {
             # terminal prompt
-            "match": r'^(.*?>)',
+            "match": r'^([^\s]*?>)',
             "name":"comment"
         },
         {
@@ -83,12 +83,13 @@ grammar = {
             "name":"comment"
         },
         {
-            "match": r'\b(BUSY|BUSYGROUP|BUSYKEY|CLUSTERDOWN|CROSSSLOT|DENIED|ERR|EXECABORT|INPROG|INVALIDOBJ|IOERR|LOADING|MASTERDOWN|MISCONF|NOAUTH|NOGOODSLAVE|NOGROUP|NOMASTERLINK|NOPERM|NOPROTO|NOQUORUM|NOREPLICAS|NOSCRIPT|NOTBUSY|OOM|READONLY|REDIRECT|TRYAGAIN|UNBLOCKED|UNKILLABLE|WRONGPASS|WRONGTYPE)\b',
+            # error codes
+            "match": r'\b(OK|BUSY|BUSYGROUP|BUSYKEY|CLUSTERDOWN|CROSSSLOT|DENIED|ERR|EXECABORT|INPROG|INVALIDOBJ|IOERR|LOADING|MASTERDOWN|MISCONF|NOAUTH|NOGOODSLAVE|NOGROUP|NOMASTERLINK|NOPERM|NOPROTO|NOQUORUM|NOREPLICAS|NOSCRIPT|NOTBUSY|OOM|READONLY|REDIRECT|TRYAGAIN|UNBLOCKED|UNKILLABLE|WRONGPASS|WRONGTYPE)\b',
             "name":"constant.language",
         },
         {
             # ACL string
-            "match": r'\s(\+@?[\w|]+|-@?[\w|]+|~\*)\s',
+            "match": r'\s(?i:\+@?[a-z|]+|-@?[a-z|]+|~\*)\s',
             "name":"constant.language"
         },
         {
