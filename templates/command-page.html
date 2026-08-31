@@ -124,7 +124,9 @@
 {% if command_description %}
 {%- set command_description_with_fixed_links = commands::fix_links(content= command_description) -%}
 
-{{ command_description_with_fixed_links | markdown | safe }}
+{{ command_description_with_fixed_links | regex_replace(pattern="\n\n```\n",rep="
+```valkey
+") | markdown | safe }}
 {% else %}
 <code>ERROR. Command description not loaded</code><br />
 {% endif %}
