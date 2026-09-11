@@ -1,0 +1,67 @@
+{
+    "displayName": "valkey",
+    "name": "valkey",
+    "patterns": [
+        {
+            "match": "\"(.+?)\"",
+            "name": "string.quoted.double"
+        },
+        {
+            "match": "'(.+?)'",
+            "name": "string.quoted.single"
+        },
+        {
+            "match": "^([^\\s]*?>)",
+            "name": "comment"
+        },
+        {
+            "match": "^(\\s*\\d+\\)\\s*\\d*\\)?)",
+            "name": "comment"
+        },
+        {
+            "match": "\\b(OK|BUSY|BUSYGROUP|BUSYKEY|CLUSTERDOWN|CROSSSLOT|DENIED|ERR|EXECABORT|INPROG|INVALIDOBJ|IOERR|LOADING|MASTERDOWN|MISCONF|NOAUTH|NOGOODSLAVE|NOGROUP|NOMASTERLINK|NOPERM|NOPROTO|NOQUORUM|NOREPLICAS|NOSCRIPT|NOTBUSY|OOM|READONLY|REDIRECT|TRYAGAIN|UNBLOCKED|UNKILLABLE|WRONGPASS|WRONGTYPE)\\b",
+            "name": "constant.language"
+        },
+        {
+            "match": "\\s(?i:\\+@?[a-z|]+|-@?[a-z|]+|~\\*)\\s",
+            "name": "constant.language"
+        },
+        {
+            "match": "(?i:\\b(on|off|nopass)\\b)",
+            "name": "variable.parameter"
+        },
+        {
+            "match": "\\((error|integer|double|nil|true|false|empty array|empty hash|empty set|empty push|empty aggregate type)\\)",
+            "name": "support.type"
+        },
+        {
+            "name": "support.function",
+            "match": "(?i:\\b(channels|zpopmax|brpoplpush|expireat|xinfo|pause|reset|flushdb|keyslot|setex|zrangestore|destroy|getdel|commandlog|readwrite|xrevrange|auth|replicate|lpushx|zrangebylex|unsubscribe|pfcount|debug|xsetid|sinter|time|sentinels|brpop|count|geoadd|get-master-addr-by-name|setbit|rpoplpush|script|incrbyfloat|command|info|fcall_ro|zpopmin|consumers|waitaof|usage|users|sunsubscribe|ping|lset|capa|slaves|remove|replconf|delconsumer|hkeys|rewrite|blmove|saveconfig|srem|substr|flushconfig|setinfo|create|lrem|georadiusbymember|pending-scripts|sismember|setname|zrevrangebyscore|persist|slaveof|idletime|sdiffstore|getkeysinslot|resetstat|publish|bitpos|pexpireat|del|decrby|cluster|ttl|hgetall|expiretime|freq|hmget|zremrangebylex|replicaof|unwatch|hsetnx|delslots|strlen|xdel|hincrby|hstrlen|readonly|dump|getuser|pexpire|geosearchstore|id|sscan|zscore|pfmerge|hincrbyfloat|lolwut|flush|zscan|bzpopmax|import-source|zrandmember|links|bgrewriteaof|append|bzpopmin|myid|object|slots|client|hlen|hscan|georadius_ro|shardchannels|scan|shardnumsub|xautoclaim|restore-asking|blpop|hello|spublish|is-master-down-by-addr|zmscore|refcount|llen|sdiff|xlen|setuser|delete|xtrim|hvals|count-failure-reports|msetnx|scard|rpushx|smismember|swapdb|smove|zrevrangebylex|multi|no-evict|evalsha_ro|trackinginfo|groups|docs|config|get-primary-addr-by-name|sunionstore|unblock|echo|lastsave|save|pfdebug|bitfield_ro|hrandfield|lindex|replicas|xgroup|zrank|copy|sync|xpending|punsubscribe|module|migrate|lpop|zdiff|zinterstore|reply|zrangebyscore|pttl|zunionstore|bzmpop|acl|lmove|psetex|master|dbsize|xack|flushslots|myshardid|slot-stats|role|lmpop|xreadgroup|incr|help|asking|select|xadd|numpat|smembers|zlexcount|watch|sintercard|lcs|discard|zrevrange|mget|failover|numsub|geohash|encoding|zincrby|no-touch|stream|zadd|ckquorum|bgsave|len|eval_ro|unpause|unlink|geodist|spop|blmpop|zinter|lpush|meet|zrevrank|zmpop|xrange|createconsumer|wait|incrby|histogram|loadex|kill|dryrun|history|shards|simulate-failure|get|doctor|sinterstore|rpop|ltrim|geosearch|evalsha|tracking|malloc-stats|zrem|zdiffstore|bumpepoch|show|sunion|getbit|randomkey|lrange|sort_ro|set|zunion|cat|primary|sort|exists|bitop|georadius|psubscribe|nodes|purge|getkeysandflags|slowlog|zcard|pubsub|genpass|zremrangebyrank|delslotsrange|hmset|load|rpush|hget|hexists|flushall|exec|stats|eval|setslot|subscribe|zrange|touch|bitcount|latency|graph|log|addslotsrange|memory|primaries|sadd|quit|xread|function|setnx|expire|lpos|pexpiretime|monitor|forget|sentinel|unload|keys|masters|ssubscribe|xclaim|setid|pfselftest|hset|getset|fcall|georadiusbymember_ro|decr|getredir|shutdown|type|getname|latest|zintercard|srandmember|mset|info-cache|list|getrange|zcount|zremrangebyscore|rename|bitfield|caching|is-primary-down-by-addr|set-config-epoch|addslots|setrange|countkeysinslot|restore|geopos|psync|linsert|getex|whoami|hdel|deluser|getkeys|move|renamenx|pfadd)\\b)"
+        },
+        {
+            "name": "variable.parameter",
+            "match": "(?i:\\b(node|auth2|freq|withscores|now|exat|importing|withcode|wrap|optout|filterby|sum|pubsub|not|lib-ver|reset|before|overflow|pxat|rank|bybox|ch|withhash|maxage|db|id|lastid|nx|slotsrange|absttl|after|async|one|master|rev|auth|soft|m|flush|justid|off|mkstream|keepttl|write|args|user|time|ft|yes|any|ifeq|count|incr|noack|append|asc|byscore|skipme|frommember|hard|all|or|aggregate|force|block|entriesread|=|skip|lt|full|gt|xx|laddr|libraryname|replace|right|group|migrating|weights|byradius|~|slave|fail|normal|left|redirect|maxdeletedid|version|idx|sat|\"\"|len|streams|keys|bit|storedist|alpha|to|error|bylex|withcoord|maxlen|minid|\\$|ex|pattern|fromlonlat|min|timeout|idle|withdist|cancel|mi|max|withmatchlen|type|prefix|km|stable|store|schedule|px|noscores|abort|no|incrby|samples|withvalues|lib-name|noloop|on|aclcat|xor|byte|setname|entriesadded|get|config|minmatchlen|persist|by|retrycount|bcast|limit|idletime|withscore|novalues|save|match|takeover|desc|replica|\\*|nosave|set|addr|copy|optin|nomkstream|sync|primary|orderby|and|module)\\b)"
+        },
+        {
+            "name": "support.function",
+            "match": "(?i:\\b(ft\\._list|ft\\._debug|ft\\.info|ft\\.search|ft\\.dropindex|ft\\.create|ft\\.aggregate)\\b)"
+        },
+        {
+            "name": "variable.parameter",
+            "match": "(?i:\\b(l2|nostem|vector|float32|stopwords|distance_metric|stddev|score|ef_runtime|sum|someshards|min|apply|timeout|sortby|load|hash|reduce|max|prefix|punctuation|type|withsortkeys|dim|text|withsuffixtrie|hnsw|nocontent|return|filter|m|allshards|consistent|ef_construction|inconsistent|withoffsets|on|skipinitialscan|verbatim|as|inorder|nosuffixtrie|nooffsets|count_distinct|count|params|minstemsize|asc|limit|avg|flat|language|tag|sortable|ip|initial_cap|cosine|desc|slop|numeric|\\*|nostopwords|cluster|dialect|local|groupby|primary|weight|json|casesensitive|separator|schema)\\b)"
+        },
+        {
+            "name": "support.function",
+            "match": "(?i:\\b(bf\\.load|bf\\.exists|bf\\.madd|bf\\.insert|bf\\.add|bf\\.card|bf\\.mexists|bf\\.reserve|bf\\.info)\\b)"
+        },
+        {
+            "name": "variable.parameter",
+            "match": "(?i:\\b(maxscaledcapacity|nocreate|error|capacity|tightening|filters|validatescaleto|size|seed|expansion|items|nonscaling)\\b)"
+        },
+        {
+            "name": "support.function",
+            "match": "(?i:\\b(json\\.objkeys|json\\.nummultby|json\\.numincrby|json\\.arrlen|json\\.arrappend|json\\.merge|json\\.objlen|json\\.forget|json\\.set|json\\.toggle|json\\.arrpop|json\\.clear|json\\.mset|json\\.get|json\\.del|json\\.arrinsert|json\\.strappend|json\\.resp|json\\.arrtrim|json\\.debug|json\\.mget|json\\.strlen|json\\.arrindex|json\\.type)\\b)"
+        }
+    ],
+    "scopeName": "source.valkey"
+}
